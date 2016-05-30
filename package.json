@@ -1,0 +1,21 @@
+{
+  "name": "socket.io-handler",
+  "version": "0.1.0",
+  "description": "init socket.io and set event handlers in a structured way",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive ./test/*.spec.js"
+  },
+  "keywords": [
+    "socket.io"
+  ],
+  "author": "Hank",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "co": "^4.6.0",
+    "mocha": "^2.4.5"
+  }
+}
