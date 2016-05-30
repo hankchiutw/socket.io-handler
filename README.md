@@ -1,5 +1,6 @@
 # socket.io-handler
 [![npm version](https://badge.fury.io/js/socket.io-handler.svg)](https://badge.fury.io/js/socket.io-handler)
+[![travis status](https://travis-ci.org/hankchiutw/socket.io-handler.svg?branch=master)](https://travis-ci.org/hankchiutw/socket.io-handler)
 
 Init socket.io and set event handlers in a structured way.
 
