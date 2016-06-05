@@ -6,6 +6,7 @@ Init socket.io and set event handlers in a structured way.
 
 ### Features
 - Used with express.js
+- Callback as ES6 generator
 
 ### How to use
 
@@ -24,19 +25,32 @@ const server = app.listen(port, function(){
 /**
  * Boot socket.io
  */
-const handler = require('../index.js')(server);
+const handler = require('socket.io-handler')(server);
 ```
 
-Set handlers:
+Append handlers from files:
 ```js
 handler.require('./socketHandlers/user');
 handler.require('./socketHandlers/auction');
 ```
 
+Append handlers directly:
+```js
+handler.defineEvents({
+    someEvent: function *(){...}
+});
+
+handler.defineEvent('someEvent', function *(){...});
+```
+** Note: ** For multiple defined events, all functions will be triggered.
+
 ### APIs
 
-##### handler.require
-> Append handlers
+##### handler.require(path)
+> Append handlers from a file
 
-### ToDos
-- Append handlers from JSON
+##### handler.defineEvents(eventMap)
+> Append handlers from a JSON object
+
+##### handler.defineEvent(eventName, cb)
+> Append a handler an event

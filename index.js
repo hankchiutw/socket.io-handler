@@ -22,6 +22,29 @@ IO.prototype.require = function(path){
     });
 };
 
+/**
+ * Define handlers from JSON object
+ * @param {Object} eventMap Key as the event name and value as the callback function
+ */
+IO.prototype.defineEvents = function(eventMap){
+    this.on('connection', function(socket){
+        _handlerBuilder(eventMap)(socket);
+    });
+};
+
+/**
+ * Define a handler an event
+ * @param {String} eventName Event name
+ * @param {Function} cb Callback function
+ */
+IO.prototype.defineEvent = function(eventName, cb){
+    this.on('connection', function(socket){
+        const eventMap = {};
+        eventMap[eventName] = cb;
+        _handlerBuilder(eventMap)(socket);
+    });
+};
+
 
 module.exports = function(server){
     return new IO(server);
