@@ -42,7 +42,7 @@ handler.defineEvents({
 
 handler.defineEvent('someEvent', function *(){...});
 ```
-** Note: ** For multiple defined events, all functions will be triggered.
+**Note:** For multiple defined events, all functions will be triggered.
 
 ### APIs
 
@@ -53,4 +53,4 @@ handler.defineEvent('someEvent', function *(){...});
 > Append handlers from a JSON object
 
 ##### handler.defineEvent(eventName, cb)
-> Append a handler an event
+> Append a handler for an event
