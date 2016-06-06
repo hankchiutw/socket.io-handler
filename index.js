@@ -68,7 +68,7 @@ function _handlerBuilder(eventMap){
         Object.keys(eventMap).forEach(function(eventName){
             socket.on(eventName, co.wrap(function*(){
                 const args = Array.prototype.slice.call(arguments);
-                console.info(`(socket.io-handler) on ${eventName}:`, args);
+                console.info(`(socket.io-handler)[${new Date().toISOString()}] on ${eventName}:`, args);
 
                 try{
                     yield eventMap[eventName].apply(socket, args);
