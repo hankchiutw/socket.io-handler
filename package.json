@@ -1,6 +1,6 @@
 {
   "name": "socket.io-handler",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "init socket.io and set event handlers in a structured way",
   "main": "index.js",
   "scripts": {
