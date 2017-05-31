@@ -4,8 +4,8 @@
  * Event handlers for User events
  */
 module.exports = {
-    userLogin,
-    userUpdate
+  userLogin,
+  userUpdate
 };
 
 /**
@@ -14,18 +14,15 @@ module.exports = {
  * @param {String} username Data passed from event source
  * @fires user#userLoginOk
  */
-function *userLogin(username){
-    const socket = this;
-
-    socket.emit('userLoginOk', 'ok');
+function *userLogin(username) {
+  const socket = this;
+  socket.emit('userLoginOk', 'ok');
 }
 
 /**
  * userUpdate handler
  * @param {Object} params
  */
-function *userUpdate(params){
-    const socket = this;
-
-
+function *userUpdate(params) {
+  const socket = this;
 }

@@ -4,8 +4,8 @@
  * Event handlers for Auction events
  */
 module.exports = {
-    auctionCreate,
-    auctionUpdate
+  auctionCreate,
+  auctionUpdate
 };
 
 /**
@@ -18,11 +18,11 @@ module.exports = {
  * @param {Number} params.currentBid
  * @fires auction#auctionUpdate
  */
-function *auctionCreate(params){
-    const socket = this;
+function *auctionCreate(params) {
+  const socket = this;
 
-    socket.broadcast.emit('auctionUpdate', 'broadcasts');
-    socket.emit('auctionUpdate', 'broadcasts2');
+  socket.broadcast.emit('auctionUpdate', 'broadcasts');
+  socket.emit('auctionUpdate', 'broadcasts2');
 }
 
 /**
@@ -36,6 +36,6 @@ function *auctionCreate(params){
  * @param {String} params.currentBid
  * @fires auction#auctionUpdate
  */
-function *auctionUpdate(params){
-    const socket = this;
+function *auctionUpdate(params) {
+  const socket = this;
 }

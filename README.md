@@ -17,9 +17,9 @@ const app = express();
 const port = 3300;
 
 const server = app.listen(port, function(){
-    console.log('Express server started at port: ', port);
+  console.log('Express server started at port: ', port);
 }).on('error', function(err){
-    console.log('Express server fail to start.');
+  console.log('Express server fail to start:', err);
 });
 
 /**
@@ -37,7 +37,7 @@ handler.require('./socketHandlers/auction');
 Append handlers directly:
 ```js
 handler.defineEvents({
-    someEvent: function *(){...}
+  someEvent: function *(){...}
 });
 
 handler.defineEvent('someEvent', function *(){...});
