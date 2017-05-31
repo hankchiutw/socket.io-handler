@@ -47,7 +47,11 @@ IO.prototype.defineEvent = function(eventName, cb) {
 
 
 module.exports = function(server) {
-  return new IO(server);
+  const io = new IO(server);
+  io.on('connection', () => {
+    console.info(`(socket.io-handler)[${new Date().toISOString()}] client connected.`);
+  });
+  return io;
 };
 module.exports.IO = IO;
 

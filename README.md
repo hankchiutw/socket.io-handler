@@ -54,3 +54,19 @@ handler.defineEvent('someEvent', function *(){...});
 
 ##### handler.defineEvent(eventName, cb)
 > Append a handler for an event
+
+### Development
+
+```sh
+npm install
+npm run example
+```
+
+And you should get output like
+```
+> node example/app.js
+
+Listening for the socket.io events: [ 'userLogin', 'userUpdate', 'userInfo' ]
+Express server started at port:  3300
+```
+Use your own socket.io client and have fun. :)
